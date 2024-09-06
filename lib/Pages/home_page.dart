@@ -6,23 +6,24 @@ import "package:my_app/widgets/item_widget.dart";
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final dummyList= List.generate(20 , (index) => CatalogModel.items[0]);
+    final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+          title: Center(
         child: Text("Catalog App"),
       )),
-      body:Padding(
+      body: Padding(
         padding: const EdgeInsets.all(18.0),
-      child: ListView.builder(
-        itemCount:dummyList.length, 
-        itemBuilder: (context,index){
-          return ItemWidget(item:dummyList[index],
-          );
-        },
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+            );
+          },
+        ),
       ),
-      ),
-        drawer: MyDrawer(),
-      );
+      drawer: MyDrawer(),
+    );
   }
 }
